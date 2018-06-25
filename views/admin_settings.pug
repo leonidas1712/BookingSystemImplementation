@@ -1,0 +1,112 @@
+//- Pug page for the admin settings page. Created 26 Oct 2017
+
+extends layout
+
+block content
+    .jumbotron(style = "background-color:#B6282D") IDEAS Hub Booking System
+    include header.pug
+    link(href = "/css/admin_settings.css" rel = "stylesheet")
+    if message
+      div(class = "alert alert-dismissable alert-"+type) 
+       a(href = "#" data-dismiss = "alert" aria-label = "close").close x
+       strong=message
+    nav.navbar.navbar-default
+      div.container-fluid
+        ul.nav.navbar-nav
+          li
+            a(href = "/admin_page") Cancel bookings 
+          li.active
+            a(href = "/admin_settings") Settings
+    div#settings-body.container-fluid
+      br
+      h3(style = "color:#FFBE3F; padding-bottom:20px;").text-center To edit or view settings for a space, select one from the table below
+      table#spaces-table.table.table-bordered.table-responsive.table-striped(style = "border: 2px solid #6F7C7D;font-size:150%;")
+        thead
+          tr
+            th Name of space
+        tbody
+          
+      button(type = "button")#addSpace.btn.btn-lg.btn-default.btn-info Add a space
+      br
+      br
+      div.row
+        label.col-lg-4(style = "color:#FFBE3F; font-size:150%;") Number of weeks ahead:
+        input(type = "number" min = "1" max = "20")#weeksAhead.form-control.col-lg-4.input-sm
+        button(type = "button").col-lg-3#saveWeeksAhead.btn.btn-default.btn-info Save setting
+      br
+      form#excel-upload(method = "POST" action = "/uploadFile" enctype = "multipart/form-data")
+        div.form-group
+          h4(style = "color:#FFBE3F; font-size:150%;") Upload excel file with bookings: 
+          input.form-control#upload-input(type = "file" name = "excel") 
+          input#upload-file.btn(type = "submit" name = "submit" value = "Upload file")
+      div#edit-space-modal.modal.fade(role = "dialog")
+        div.modal-dialog
+          div.modal-header
+            button(type = "button" data-dismiss="modal").close &times;
+            h4.modal-title Edit settings for the selected space: 
+              span#spaceName
+          div#modal-body.modal-body
+            div.form-group
+              label(style = "color:white;") Name:
+              input#editName.form-control.input-sm(type = "text") 
+            div#days
+              div.checkbox
+                input#Monday(type = "checkbox" name = "day")
+                span.middle Monday
+              div.checkbox
+                input#Tuesday(type = "checkbox" name = "day")
+                span.middle Tuesday
+              div.checkbox
+                input#Wednesday(type = "checkbox" name = "day")
+                span.middle Wednesday
+              div.checkbox
+                input#Thursday(type = "checkbox" name = "day")
+                span.middle Thursday
+              div.checkbox
+                input#Friday(type = "checkbox" name = "day")
+                span.middle Friday
+              div.checkbox
+                input#Saturday(type = "checkbox" name = "day")
+                span.middle Saturday
+              div.checkbox
+                input#Sunday(type = "checkbox" name = "day")
+                span.middle Sunday
+            //-div.row.time-group
+              input(type = "time" value = "11:45") 
+              span.middle to
+              input(type = "time" value = "12:45") 
+          //-  div.row.time-group
+              input(type = "time" value = "12:45") 
+              span.middle to
+              input(type = "time" value = "13:45")
+            div.row.time-group
+              input(type = "time" value = "13:45") 
+              span.middle to
+              input(type = "time" value = "14:45")
+            div.row.time-group
+              input(type = "time" value = "14:45") 
+              span.middle to
+              input(type = "time" value = "15:45")
+          div.clearfix
+          button(type = "button")#saveBtn.btn.btn-default.btn-info Save settings for the space
+          button(type = "button")#addDuration.btn.btn-default Add a duration
+          button(type = "button")#deleteDuration.btn.btn-default Delete the last duration
+          button(type = "button" data-dismiss = "modal").btn.btn-default.btn-danger Go back
+          button(type = "button")#deleteSpace.btn.btn-default.btn-danger.confirm Delete this space
+
+        
+
+          
+          
+          
+   
+    
+    script(src = "/bower_components/bootstrap/dist/js/bootstrap.js")
+    script(src= "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.js")
+    script(src = "/bower_components/jquery/dist/jquery.js")
+    script(src = "/scripts/admin_settings.js")
+  
+
+        
+
+    

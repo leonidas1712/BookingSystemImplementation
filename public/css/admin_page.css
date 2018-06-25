@@ -1,0 +1,14 @@
+/*CSS file for the admin_page(Cancel bookings). Created 25 Oct 2017*/
+
+.booked:hover{
+  background-color:#FFBE3F;
+}
+
+.field{
+  color:white;
+  font-size:140%;
+}
+
+.jumbotron{
+  background-color:#B6282D;
+}

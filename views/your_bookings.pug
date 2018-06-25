@@ -1,0 +1,40 @@
+//-Your bookings page for user. Created 23 Oct 2017
+extends layout
+
+block content
+  .jumbotron IDEAS Hub Booking System
+  div.container-fluid
+    div.row
+      include header.pug
+      nav.navbar.navbar-default
+        div.container-fluid
+          ul.nav.navbar-nav
+            li
+              a(href = "/account_page") Make bookings 
+            li.active
+              a(href = "/your_bookings") Your bookings
+    div.row
+      h3(style = "color:#FFBE3F; padding:20px;").text-center To cancel a booking, please select one of the dates below.
+    table#your-bookings.table.table-bordered.table-responsive.table-striped(style = "border: 2px solid #6F7C7D;font-size:150%;")
+      thead
+        tr
+          th Date 
+          th Space
+      tbody
+      div#cancel-modal.modal.fade(role = "dialog")
+        div.modal-dialog
+          div.modal-header
+            button(type = "button" data-dismiss="modal").close &times;
+            h4.modal-title(style = "color:white; font-size:150%") Are you sure you want to cancel this booking?
+          div.modal-body 
+            div#booking(style = "color:white; font-size:120%;")
+          div.modal-footer 
+            button(type = "button")#cancelBtn.btn.btn-default.btn-info Cancel booking
+            button(type = "button" data-dismiss = "modal").btn.btn-default.btn-danger Go back
+  script(src = "/bower_components/jquery/dist/jquery.js")
+  script(src = "/bower_components/bootstrap/dist/js/bootstrap.js")
+  script(src= "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.js")
+  script(src = "/scripts/your_bookings.js")
+
+
+ 

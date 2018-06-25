@@ -1,0 +1,36 @@
+{
+  "name": "booking_system",
+  "version": "1.0.0",
+  "description": "Booking system for the computer science IA",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huzaifa1712/booking_system_node_REAL.git"
+  },
+  "author": "Jeff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huzaifa1712/booking_system_node_REAL/issues"
+  },
+  "homepage": "https://github.com/huzaifa1712/booking_system_node_REAL#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "excel": "^0.1.7",
+    "express": "^4.15.4",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.5",
+    "formidable": "^1.1.1",
+    "moment": "^2.19.1",
+    "mongoose": "^4.11.10",
+    "multer": "^1.3.0",
+    "nodemailer": "^4.2.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
+    "pug": "^2.0.0-rc.3",
+    "xlsx": "^0.11.8"
+  }
+}

@@ -1,0 +1,34 @@
+//- Pug page for the admin cancel bookings page. Created 25 Oct 2017
+
+extends layout
+
+block content
+  link(href = '/css/admin_page.css' rel = 'stylesheet')
+  .jumbotron(style = "background-color:#B6282D") IDEAS Hub Booking System
+  div.container-fluid
+    div.row
+      include header.pug
+    nav.navbar.navbar-default
+      div.container-fluid
+        ul.nav.navbar-nav
+          li.active
+            a(href = "/admin_page") Cancel bookings 
+          li
+            a(href = "/admin_settings") Settings
+    div.col-lg-12.col-md-10.col-sm-10.col-xs-8 
+      h3(style = "color:#FFBE3F; padding-bottom:20px;").text-center To cancel a booking, please select one of the booked times, if any.
+  include bookings_table.pug
+  div#cancel-modal.modal.fade(role = "dialog")
+    div.modal-dialog
+      div.modal-header
+        button(type = "button" data-dismiss="modal").close &times;
+        h4.modal-title(style = "color:white; font-size:170%") Are you sure you want to cancel this booking?
+      div.modal-body 
+        div#date.field
+        div#time.field
+        div#space.field
+        div#name.field
+      div.modal-footer 
+        button(type = "button")#cancelBtn.btn.btn-default.btn-info Cancel booking
+        button(type = "button" data-dismiss = "modal").btn.btn-default.btn-danger Go back
+  script(src = "/scripts/admin_cancel_bookings.js")

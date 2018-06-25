@@ -1,0 +1,75 @@
+/*CSS file for the admin_settings(Settings). Created 26 Oct 2017*/
+
+
+#settings-body{
+  margin-right:20%;
+  margin-left:20%;
+}
+
+.modal-header{
+  color:white;
+  font-size:135%;
+}
+
+td:hover{
+  background-color: #6F7C7D;
+}
+
+.time-group{
+  display:block;
+  float:right;
+  margin:5px;
+  padding: 20px;
+}
+
+.middle{
+  color:white;
+  padding:10px;
+  font-size:120%;
+}
+#days{
+  float:left;
+}
+#times{
+  float:right;
+}
+
+button{
+  margin:10px;
+}
+
+#addDuration{
+  color:white;
+  background-color: #FFBE3F;
+}
+
+#deleteDuration{
+  color:white;
+  background-color: #B6282D;
+}
+
+#addSpace{
+  display:block;
+  margin: 0 auto;
+  width:100%;
+  background-color: #49748A;
+}
+
+#weeksAhead{
+  width:25%;
+  margin-right:1em;
+}
+
+#saveWeeksAhead{
+  margin:0 auto;
+  padding:5px;
+}
+
+#upload-input{
+
+}
+
+#upload-file{
+  background-color: #FFBE3F;
+  color:white;
+}

@@ -1,0 +1,129 @@
+/*
+Blue - #49748A
+Red - #B6282D
+Yellow - #FFBE3F
+Grey - #6F7C7D
+
+The main style sheet. Used in all pages
+
+Created 7 Sep 2017
+*/
+.jumbotron{
+  background-color: #49748A;
+  color: white;
+  font-size: 175%;
+  text-align: center;
+}
+
+.btn-primary{
+  padding:20px;
+  font-size:125%;
+  background-color: #FFBE3F;
+}
+
+a.btn:hover{
+  background-color: rgb(196,182,25);
+}
+
+#account_body{
+  display:block;
+  overflow:auto;
+  white-space: nowrap;
+  margin:0px auto;
+}
+
+table{
+  border-top-color:#6F7C7D;;
+  border-right-color:#6F7C7D;
+  border-left-color:#6F7C7D;
+  border-bottom-color:#6F7C7D;
+  text-align: center;
+}
+
+thead{
+  text-align:center;
+
+}
+
+.booked{
+  background-color:#B6282D;
+  color:white;
+}
+
+#schedule{
+  padding:15px;
+  border-style:solid;
+  border-width:3px;
+  border-color:#B6282D;
+}
+
+#booking-modal{
+  color:white;
+  font-size:1.5em;
+
+}
+
+.submit{
+  background-color:#49748A;
+  color:white;
+}
+.btn-danger{
+  background-color:#B6282D;
+}
+
+#next-week{
+  margin:auto;
+  float:right;
+  color:white;
+  background-color: #49748A;
+  padding:10px;
+  font-size:110%;
+}
+
+#prev-week{
+  margin:auto;
+  float:right;
+  background-color: #B6282D;
+  color:white;
+  padding:10px;
+  font-size:110%;
+}
+
+.dropdown{
+  margin:auto;
+  float:left;
+}
+
+.dropdown-toggle{
+  background-color:#49748A;
+}
+
+#buttons{
+  margin:auto;
+  float:right
+  padding:0;
+}
+
+
+body{
+  padding:5px;
+}
+
+li.active{
+  background-color:#6F7C7D;
+}
+
+nav{
+  color:black;
+  font-size:120%;
+  font-family:inherit;
+  font-weight:bold;
+}
+
+.date:hover{
+  background-color: #6F7C7D;
+}
+
+th{
+  text-align:center;
+}

@@ -1,0 +1,23 @@
+//- Pug page for the user account page. Created 7 Sep 2017
+extends layout
+
+block content
+  link(href = '/css/booked.css' rel = 'stylesheet')
+  .jumbotron IDEAS Hub Booking System
+  include header.pug
+  nav.navbar.navbar-default
+    div.container-fluid
+      ul.nav.navbar-nav
+        li.active
+          a(href = "/account_page") Make bookings 
+        li
+          a(href = "/your_bookings") Your bookings
+  div#account_body.container-fluid
+    br
+    div.col-lg-2.col-md-2.col-sm-2.col-xs-2 
+      h3(style = "color:#FFBE3F; margin-left:160%; padding-bottom:20px;").text-center To make a booking, please select one of the free times below.
+    div.clearfix
+    include bookings_table.pug
+    script(src = "/scripts/make_bookings.js")
+
+    

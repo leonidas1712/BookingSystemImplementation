@@ -1,0 +1,14 @@
+//- this is from the express-messages page, modified a bit. It loops through
+//- the messages that we are trying to send, and then gives it a custom
+//- Bootstrap class depending on the type. For displaying error messages.
+
+//- Created 25 Oct 2017
+.messages
+  each type in Object.keys(messages)
+     each message in messages[type]
+       //-Use the below code for generating a dismissable alert
+       //-message goes AFTER the dismiss button
+       div(class = "alert alert-dismissable alert-"+type) 
+        a(href = "#" data-dismiss = "alert" aria-label = "close").close x
+        strong=message
+      

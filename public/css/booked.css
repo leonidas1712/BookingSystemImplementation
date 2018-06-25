@@ -1,0 +1,8 @@
+
+/* style for making it so that unbooked cells will have a background color change when hovering
+Created 15 Sep 2017
+*/
+td:not(.booked):not(.time):hover{
+  background-color:#6F7C7D;
+
+}

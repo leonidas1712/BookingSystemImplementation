@@ -1,0 +1,11 @@
+//-Index page. Just has the bookings_table and the sign in button.
+//- Created 7 Sep 2017
+extends layout
+
+block content
+  .jumbotron IDEAS Hub Booking System
+  .container-fluid(style = "position:relative; height:70%;")
+    include bookings_table.pug
+    .row
+        
+        a.btn.btn-block.btn-primary(href = "/auth/google" style = "margin-top:50px;").col-lg-8 Sign in with school e-mail
