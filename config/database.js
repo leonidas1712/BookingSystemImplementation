@@ -2,6 +2,6 @@
 //Created 7 Sep 2017
 
 module.exports = {
-  'url':'mongodb://localhost/bookings',
+  'url': process.env.MONGODB_URI
 
 }
