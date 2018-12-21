@@ -17,6 +17,9 @@ require('./config/passport.js')(passport)
 var fs = require('fs');
 var multer = require('multer');
 
+//Set port to number of process.env.PORT for Heroku
+const port = process.env.PORT || 3000;
+
 //Excel file is stored in the uploads folder, and renamed to excel.xlsx
 //because the file.fieldname is 'excel'
 var storage = multer.diskStorage({
@@ -603,5 +606,5 @@ function isAdmin(req,res,next){
 
 //Set port
 
-const port = process.env.PORT || 3000;
+
 app.listen(port);
