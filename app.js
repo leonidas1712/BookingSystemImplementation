@@ -601,4 +601,7 @@ function isAdmin(req,res,next){
   }
 }
 
-app.listen(3000);
+//Set port
+
+const port = process.env.PORT || 3000;
+app.listen(port);
