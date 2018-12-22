@@ -318,7 +318,7 @@ loadPage(pageWeekNum, maxWeekNum);
 setInterval(function(){
   console.log("running");
   populateBookings(pageWeekNum);
-},1000);
+},100000);
 
 
 });

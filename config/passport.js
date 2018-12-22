@@ -43,7 +43,8 @@ module.exports = function(passport){
             return done(null,user);
           }
 
-          /*else if(profile.emails[0].value == 'ideashubbookingsystem@gmail.com'){
+          /*
+          else if(profile.emails[0].value == 'ideashubbookingsystem@gmail.com'){
             var newUser = new User();
             newUser.google_id = profile.id;
             newUser.token = accessToken;
