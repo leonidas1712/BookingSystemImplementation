@@ -1,9 +1,9 @@
 //The main file from which everything is based on - we run this file when launching the server. All routes
 //are defined here.
-//comment
+
 //Created 7 Sep 2017
 
-//This is a comment
+
 
 let express = require('express');
 let path = require('path');
