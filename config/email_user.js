@@ -2,5 +2,5 @@
 //Created 23 Oct 2017
 module.exports = {
   user:'ideashubbookingsystem@gmail.com',
-  pass:'huzaifa1712'
+  pass:'GTcsJcX559dpj6d'
 }
