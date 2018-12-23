@@ -9,7 +9,7 @@ This is a booking system meant for use by students at a school's **makerspace**,
 # Technologies used:
 - Front-end: **Pug(templating engine), Bootstrap, jQuery**
 - Back-end: **Node.js, MongoDB**
--
+
 # Important libraries:
 - **Express** for Node.js - routing
 - **Mongoose** to communicate with MongoDB, build data models
