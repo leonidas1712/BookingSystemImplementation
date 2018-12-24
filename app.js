@@ -114,6 +114,11 @@ app.set('view engine','pug');
 
   //Route to authenticate users. This is where the login button on the landing page
   //points to.
+
+  var login = require('./routes/login');
+  app.use(login);
+
+  /*
   app.get('/auth/google', passport.authenticate('google', {
     //telling it what to look for in the account(scope), so profile(for name,id) and email
     scope: ['profile','email']
@@ -125,7 +130,7 @@ app.set('view engine','pug');
     successRedirect: '/account_page',
     failureRedirect: '/',
     failureFlash:true
-  }));
+  }));*/
 
 //Normal routes
 
@@ -497,8 +502,11 @@ app.post('/uploadFile', upload.single('excel'),function(req,res){
 
 });
 
-//ROUTES FOR PAGES.
+//ROUTES FOR VIEWS.
 
+
+
+/*
 //Index page(landing page)
 app.get('/',(req,res)=>{
   //Find and pass in array of spaces with the names. Used to populate dropdown.
@@ -565,6 +573,7 @@ app.get('/logout',(req,res)=>{
   res.redirect('/');
 });
 
+*/
 
 //CUSTOM MIDDLEWARE
 
@@ -603,6 +612,9 @@ function isAdmin(req,res,next){
     res.redirect('/')
   }
 }
+
+var views = require('./routes/views');
+app.use(views);
 
 //Set port
 
