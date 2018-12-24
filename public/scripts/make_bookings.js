@@ -26,7 +26,7 @@ function getBookingFields(rowIndex,columnIndex){
   //.replace(/\s+/g, '')
   var selectedVal = $(".dropdown-menu li a").parents(".dropdown").find('.btn').text().replace(/\s+/g, '');
   var spaceNameWithSpaces = $(".dropdown-menu li a").parents(".dropdown").find('.btn').text();
-  console.log("Selected value from dropdown:" + selectedVal);
+  //console.log("Selected value from dropdown:" + selectedVal);
 
 
   return {
@@ -93,7 +93,7 @@ $(document).ready(function(){
     //get the booking fields needed, using the table cell's row and column index
     //which were stored upon clicking.
     var rowIndex = $("#booking-modal").data("rowIndex");
-    console.log(rowIndex);
+    //console.log(rowIndex);
     var colIndex = $("#booking-modal").data("colIndex");
 
     var bookingFields = getBookingFields(rowIndex,colIndex);
@@ -106,7 +106,7 @@ $(document).ready(function(){
     else{
       //get the reminder option picked.
       var reminderValue = $("input[name='reminder']:checked").val();
-      console.log(reminderValue);
+      //console.log(reminderValue);
 
       //Make the booking using an ajax request.
       $.ajax({

@@ -34,13 +34,13 @@ function setBookingFields(id){
 function cancelBooking(){
   $("#bookings-table td:not(:first-child)").each(function(){
     if($(this).hasClass("booked") == true){
-      console.log("YWS");
+      //console.log("YWS");
       $(this).attr("data-toggle","modal");
       $(this).attr("data-target","#cancel-modal");
-      console.log("YWS");
+      //console.log("YWS");
 
       $(this).click(function(){
-        console.log("ID: " + $(this).data("bookingId"));
+        //console.log("ID: " + $(this).data("bookingId"));
         var id = $(this).data("bookingId");
 
         $("#cancel-modal").data("bookingId",id);

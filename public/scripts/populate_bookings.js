@@ -20,8 +20,8 @@ function removeAllBookings(){
 //fill the table with the bookings,while assigning the 'booked' HTML class to any filled
 //table cells
 function populateBookings(isoWeekNum){
-  console.log("isoWeek from populate: " + isoWeekNum);
-  console.log(getSelectedSpace());
+  //console.log("isoWeek from populate: " + isoWeekNum);
+  //console.log(getSelectedSpace());
   $.ajax({
     type:'GET',
     async:false,
@@ -32,7 +32,7 @@ function populateBookings(isoWeekNum){
     //valid JSON first
     success:function(response){
       var responseArr = JSON.parse(response);
-      console.log(responseArr);
+      //console.log(responseArr);
 
       //checks if there is anything in the array, only then runs the below.
       if(Array.isArray(responseArr) && responseArr.length > 0){
@@ -69,7 +69,7 @@ function populateBookings(isoWeekNum){
               $(this).addClass('booked');
               //assign the bookingId as an attribute to the cell.
               $(this).data("bookingId",bookingId);
-              console.log($(this).data("bookingId"));
+              //console.log($(this).data("bookingId"));
             }
 
           }
@@ -114,7 +114,7 @@ function getSelectedSpace(){
 //function that returns the settings for the table given the spaceName selected.
 function getSettings(spaceName){
   //create variables to store the days and times we can assign later when we getSettings
-  console.log(spaceName + 'endtext');
+  //console.log(spaceName + 'endtext');
   var days = [];
   var times = [];
   $.ajax({
@@ -122,8 +122,8 @@ function getSettings(spaceName){
     async:false,
     type:'GET',
     success:function(response){
-      console.log("Settings:");
-      console.log(response);
+      //console.log("Settings:");
+      //console.log(response);
 
       days = response.days;
       times = response.times;
@@ -263,7 +263,7 @@ $("#bookings-table").data("year", year);
 
 //gets the max week number alloed
 var maxWeekNum = getMaxWeekNum();
-console.log("MaxWeekNum: " + maxWeekNum);
+//console.log("MaxWeekNum: " + maxWeekNum);
 
 //defining what happens when previous week button is clicked
 $("#prev-week").click(function(){
@@ -271,7 +271,7 @@ $("#prev-week").click(function(){
   if(!(pageWeekNum <= moment().isoWeek())){
     pageWeekNum = pageWeekNum - 1;
     $("#bookings-table").data("weekNumber", pageWeekNum);
-    console.log("prevWeek pageWeekNum: " + pageWeekNum);
+    //console.log("prevWeek pageWeekNum: " + pageWeekNum);
     loadPage(pageWeekNum, maxWeekNum);
 
 
@@ -285,7 +285,7 @@ $("#next-week").click(function(){
   if(!(pageWeekNum >= maxWeekNum)){
     pageWeekNum = pageWeekNum + 1;
     $("#bookings-table").data("weekNumber", pageWeekNum);
-    console.log("nextWeek pageWeekNum: " + pageWeekNum);
+    //console.log("nextWeek pageWeekNum: " + pageWeekNum);
     loadPage(pageWeekNum,maxWeekNum);
   }
 });
@@ -298,7 +298,7 @@ $(".dropdown-menu li a").click(function(){
 
   //destroy the table, then draw the table using the new selected space and populate.
   destroyTable();
-  console.log('get selected:' + getSelectedSpace() + 'end');
+  //console.log('get selected:' + getSelectedSpace() + 'end');
   drawTable(getSelectedSpace());
   populateBookings(pageWeekNum);
 });
@@ -316,7 +316,7 @@ loadPage(pageWeekNum, maxWeekNum);
 //running populate every second so that if a new booking is made
 //the user can see it without having to refresh the page.
 setInterval(function(){
-  console.log("running");
+  //console.log("running");
   populateBookings(pageWeekNum);
 },100000);
 

@@ -79,7 +79,7 @@ function populateTable(){
       var tdDate = $('<td class = "date" title = "Cancel this booking">' + bookingDetails[i].date + '</td>');
       //storing the id in the cell so we can access it when cancelling
       tdDate.data("bookingId",bookingDetails[i].id);
-      console.log("ID: " + tdDate.data("bookingId"));
+      //console.log("ID: " + tdDate.data("bookingId"));
       tdDate.appendTo(tr);
     }
 
@@ -124,7 +124,7 @@ $(document).ready(function(){
 //the page when deleting is done.
   $("#cancelBtn").click(function(){
     var bookingId = $("#cancel-modal").data("bookingId");
-    console.log("bookingID: " + bookingId);
+    //console.log("bookingID: " + bookingId);
 
     $.ajax({
       url:'/delete_booking/' + bookingId,

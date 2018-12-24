@@ -86,11 +86,11 @@ function populateModal(id){
   //is equal to the day, check the box.
   days.forEach(function(day){
     var dayFromSpace = day;
-    console.log("dayFromSpace: " + day);
+    //console.log("dayFromSpace: " + day);
 
     $("#days input").each(function(){
       var inputId = $(this).attr('id');
-      console.log("Input id:" + inputId);
+      //console.log("Input id:" + inputId);
 
       if(inputId == day){
         $(this).prop("checked",true);
@@ -219,14 +219,14 @@ function validateSettingsInput(){
       //get the first time in that div, and convert to moment.
       var firstTime = $(this).find("#start").val();
       firstTime = moment(firstTime,"kk:mm");
-      console.log("firstTime: " + firstTime.format());
+      //console.log("firstTime: " + firstTime.format());
 
       //get the second time in that div, and convert to moment.
       var secondTime = $(this).find("#end").val();
       secondTime = moment(secondTime, "kk:mm");
-      console.log("secondTime: " + secondTime.format());
+      //console.log("secondTime: " + secondTime.format());
 
-      console.log("isAfter: + " + secondTime.isAfter(firstTime,"minute"));
+    //  console.log("isAfter: + " + secondTime.isAfter(firstTime,"minute"));
       //if secondTime is after firstTime, set the var to true.
       if(!secondTime.isAfter(firstTime,"minute")){
         momentIsAfter = true;
@@ -300,7 +300,7 @@ function getSelectedSettings(){
     selectedDays.push($(this).attr('id'));
   });
 
-  console.log(selectedDays);
+  //console.log(selectedDays);
 
   var selectedTimes = []; //24 HOUR TIME.
   //go through the divs with the times, and select the value of the time value in the
@@ -308,18 +308,18 @@ function getSelectedSettings(){
   $("div.time-group").each(function(){
     var start = $(this).find("#start").val();
     var end = $(this).find("#end").val();
-    console.log(start);
-    console.log(end);
+    //console.log(start);
+    //console.log(end);
     var timeObj = {
       start:start,
       end:end
     }
-    console.log(timeObj);
+    //console.log(timeObj);
     selectedTimes.push(timeObj);
   });
 
-  console.log(selectedTimes);
-  
+  //console.log(selectedTimes);
+
   //this returns an array with the 12 hour time values + meridien(am/pm). This is the
   //final version we need to set the Space settings.
 
@@ -337,20 +337,20 @@ function getSelectedSettings(){
     finalTimes.push(timeObj);
   }
 
-  console.log(selectedTimes);
+  //console.log(selectedTimes);
   //Get the id of the space being edited.
   if($("#edit-space-modal").data("spaceId")){
     var spaceId = $("#edit-space-modal").data("spaceId");
 
   }
-  console.log(spaceId);
+  //console.log(spaceId);
 
-  console.log("Finaltimes:");
-  console.log(finalTimes);
+  //console.log("Finaltimes:");
+  //console.log(finalTimes);
 
   //get the space name from the text box.
   var spaceName = $("#editName").val();
-  console.log(spaceName);
+  //console.log(spaceName);
 
   var spaceUpdate = {
     id:spaceId,
