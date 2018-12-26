@@ -2,8 +2,7 @@
 //are defined here.
 
 //Created 7 Sep 2017
-
-
+require('dotenv').config();
 
 let express = require('express');
 let path = require('path');
@@ -118,19 +117,6 @@ app.set('view engine','pug');
   var login = require('./routes/login');
   app.use(login);
 
-  /*
-  app.get('/auth/google', passport.authenticate('google', {
-    //telling it what to look for in the account(scope), so profile(for name,id) and email
-    scope: ['profile','email']
-  }));
-
-  //This is a callback that executes after login is done.
-  app.get('/auth/google/callback',passport.authenticate('google',{
-    //redirect to 'account_page' if succeeded in logging in, if not go to index
-    successRedirect: '/account_page',
-    failureRedirect: '/',
-    failureFlash:true
-  }));*/
 
 //Normal routes
 
@@ -502,78 +488,6 @@ app.post('/uploadFile', upload.single('excel'),function(req,res){
 
 });
 
-//ROUTES FOR VIEWS.
-
-
-
-/*
-//Index page(landing page)
-app.get('/',(req,res)=>{
-  //Find and pass in array of spaces with the names. Used to populate dropdown.
-  Space.getSpaceNames(function(err,spaces){
-    if(err){
-      throw err;
-    }
-    else{
-      res.render('index',{
-        spaces:spaces
-      });
-    }
-  });
-});
-
-app.get('/account_page',isLoggedIn, (req,res)=>{
-  //USES SETTINGS
-  //if user is not administrator, proceed to account page.
-  if(!req.user.isAdmin){
-    Space.getSpaceNames(function(err,spaces){
-      res.render('account_page',{
-        firstName:req.user.firstName,
-        spaces:spaces
-      });
-
-    });
-  }
-
-  //if user is admin, redirect to admin_page
-  else{
-    res.redirect('/admin_page');
-  }
-});
-
-
-
-  //get route for your_bookings page.
-  app.get('/your_bookings',isLoggedIn,(req,res)=>{
-        res.render('your_bookings',{
-          firstName:req.user.firstName
-        });
-  });
-
-  //get route for admin page.
-  app.get('/admin_page',isAdmin,(req,res)=>{
-    Space.getSpaceNames(function(err,spaces){
-      res.render('admin_page',{
-        firstName:req.user.firstName,
-        spaces:spaces
-      });
-    });
-  });
-
-  app.get('/admin_settings',isAdmin,(req,res)=>{
-    res.render('admin_settings',{
-      firstName:req.user.firstName
-    })
-  });
-
-
-//this route handles logging out.
-app.get('/logout',(req,res)=>{
-  req.logout();     //logout is a function Passport adds to Express somehow
-  res.redirect('/');
-});
-
-*/
 
 //CUSTOM MIDDLEWARE
 

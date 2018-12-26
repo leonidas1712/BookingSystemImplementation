@@ -2,8 +2,8 @@
 //Created 7 Sep 2017
 module.exports = {
   'googleAuth':{
-    'clientID': '1047761140934-uupp0b8ohfd50rns6fkscpo1h6fufg3o.apps.googleusercontent.com',
-    'clientSecret': '1cbtv9XH3yZTVqzVrZevWlaj',
+    'clientID': process.env.CLIENT_ID,
+    'clientSecret': process.env.CLIENT_SECRET,
     'callbackURL': '/auth/google/callback'
   }
 }

@@ -29,7 +29,8 @@ spaceSchema.statics.getSpaceNames = function getSpaceNames(cb){
 };
 
 module.exports = mongoose.model('Space',spaceSchema);
-/*var Space = mongoose.model('Space',spaceSchema);
+/*
+var Space = mongoose.model('Space',spaceSchema);
 mongoose.connect('mongodb://localhost/bookings');
 
 var space1 = new Space({
