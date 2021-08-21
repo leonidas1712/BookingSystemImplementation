@@ -2,8 +2,6 @@
 
 The booking system for the Computer Science IA(Coursework for IB Computer Science HL)
 
-Hosted on: https://ideashubbookingsystem.herokuapp.com/
-
 ![alt text](https://github.com/huzaifa1712/BookingSystemImplementation/blob/master/ProductScreenshots/BookingSystem.png "Booking System")
 
 This is a booking system meant for use by students at a school's **makerspace**, where rooms need to booked for use and bookings must be managed by an administrator.
